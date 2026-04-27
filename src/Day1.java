@@ -14,13 +14,16 @@ public class Day1 {
         System.out.println("세번째 숫자: ");
         int c = sc.nextInt();
 
-        if (a >= b &&  a >= c) {
-            System.out.println("첫번째 숫자가 가장 큽니다.");
-        } else if (b >= a && b >= c) {
-            System.out.println("두번째 숫자가 가장 큽니다.");
-        } else {
-            System.out.println("세번째 숫자가 가장 큽니다.");
+        int max = a;
+
+        if (b > max) {
+            max = b;
         }
+        if (c > max) {
+            max = c;
+        }
+
+        System.out.println("가장 큰 수 : " + max);
 
         // Q2 숫자 2개 입력받기
         System.out.println("첫 번째 숫자: ");
