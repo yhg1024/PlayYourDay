@@ -1,7 +1,18 @@
+import java.util.Scanner;
+
 public class Day2_for {
     public static void main(String[] args) {
         //같은 작업을 여러 번 자동으로 돌리기
         //“코드 줄이는 감각” 익히기
+
+        // Q6 사용자가 숫자 입력하면 그 단 출력
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("구하고 싶은 단을 입력하세요.");
+        int dan = sc.nextInt();
+        for (int i = 1; i <= 9; i++) {
+            System.out.println(dan + " X " + i + " = " + dan*i);
+        }
 
         // Q5 구구단 2단 ~ 5단까지 출력
         for (int i = 2; i <= 5; i++) {
