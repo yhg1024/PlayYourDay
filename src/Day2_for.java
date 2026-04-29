@@ -5,13 +5,21 @@ public class Day2_for {
         //같은 작업을 여러 번 자동으로 돌리기
         //“코드 줄이는 감각” 익히기
 
+        // Q7 2~9단 전체 출력 (가로 정렬)
+        for (int i = 1; i <= 9; i++) {
+            for (int j = 2; j <= 9; j++) {
+                System.out.print(j + "x" + i + " ");
+            }
+            System.out.println();
+        }
+
         // Q6 사용자가 숫자 입력하면 그 단 출력
         Scanner sc = new Scanner(System.in);
 
         System.out.println("구하고 싶은 단을 입력하세요.");
         int dan = sc.nextInt();
         for (int i = 1; i <= 9; i++) {
-            System.out.println(dan + " X " + i + " = " + dan*i);
+            System.out.println(dan + "X " + i + " = " + dan*i);
         }
 
         // Q5 구구단 2단 ~ 5단까지 출력
