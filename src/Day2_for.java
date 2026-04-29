@@ -3,6 +3,13 @@ public class Day2_for {
         //같은 작업을 여러 번 자동으로 돌리기
         //“코드 줄이는 감각” 익히기
 
+        // Q5 구구단 2단 ~ 5단까지 출력
+        for (int i = 2; i <= 5; i++) {
+            for (int j = 2; j < 10; j++) {
+                System.out.println(i + " X " + j + " = " + i*j);
+            }
+        }
+
         // Q4 구구단 2단 출력
         for (int i = 1; i < 10; i++) {
             System.out.println("2 X " + i + " = " + (2*i));
