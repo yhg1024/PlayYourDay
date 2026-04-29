@@ -5,6 +5,17 @@ public class Day2_for {
         //같은 작업을 여러 번 자동으로 돌리기
         //“코드 줄이는 감각” 익히기
 
+        // 별 찍기 (중첩 반복문 응용)
+        // 총 5줄
+        // 첫 줄: 별 1개
+        // 마지막 줄: 별 5개
+        for (int i = 0; i <= 5; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
         // Q7 2~9단 전체 출력 (가로 정렬)
         for (int i = 1; i <= 9; i++) {
             for (int j = 2; j <= 9; j++) {
