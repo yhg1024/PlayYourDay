@@ -5,6 +5,28 @@ public class Day2_for {
         //같은 작업을 여러 번 자동으로 돌리기
         //“코드 줄이는 감각” 익히기
 
+        // 오른쪽 정렬 별 찍기
+        // 공백 + 별 2개 필요
+
+        for (int i = 1; i <= 5; i++) {
+            for (int j = 1; j <= 5 - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+
+        // 안보고 거꾸로 별 찍기
+        for (int i = 5; i >= 1 ; i--) {
+            for (int j = 0; j < i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
         // 거꾸로 출력
         for (int i = 5; i >= 1; i--) {
             for (int j = 1; j <= i; j++) {
