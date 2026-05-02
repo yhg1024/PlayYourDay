@@ -14,18 +14,18 @@ public class Day3_while {
         if (input == 0) {
             System.out.println("입력된 값이 없습니다.");
         } else {
-        int max = input;
-        while (true) {
-            System.out.print("입력 : ");
-            input = sc.nextInt();
-            if (input > max) {
-                max = input;
+            int max = input;
+            while (true) {
+                System.out.print("입력 : ");
+                input = sc.nextInt();
+                if (input > max) {
+                    max = input;
+                }
+                if (input == 0){
+                    System.out.println("최댓값 : " + max);
+                    break;
+                }
             }
-            if (input == 0){
-                System.out.println("최댓값 : " + max);
-                break;
-            }
-        }
         }
 
         // Q2 짝수만 더하기
