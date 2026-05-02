@@ -3,17 +3,38 @@ import java.util.Scanner;
 
 public class Day3_while {
     public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // Q1 0을 입력할 때까지 계속 숫자 입력받기
+        //숫자 계속 입력
+        //입력한 숫자 모두 더하기
+        //0 입력하면 종료
+        //최종 합 출력
+        int input= 0;
+        int sum = 0;
+
+        while (true) {
+            System.out.print("숫자 입력 : ");
+            input = sc.nextInt();
+            if (input != 0) {
+                sum += input;
+            } else {
+                System.out.println("합계: " + sum);
+                break;
+            }
+        }
+
         //컴퓨터가 1~100 숫자 하나 정함
         //내가 계속 숫자 입력
         //맞출 때까지 반복
         //정답보다 크면 → “DOWN”
         //작으면 → “UP”
         //시도 횟수 출력
-        Scanner sc = new Scanner(System.in);
         Random random = new Random();
 
         int answer = random.nextInt(100)+1;
-        int input = 0;
+        // int input = 0;
         int count = 0;
 
         while (input != answer) {
