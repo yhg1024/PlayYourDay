@@ -1,8 +1,10 @@
 import java.util.Scanner;
 
-public class Day5_calculate {
+public class Day5_calculateClass {
 
     public static void main(String[] args) {
+        Calculator cal = new Calculator();
+
         Scanner sc = new Scanner(System.in);
 
         while (true) {
@@ -17,38 +19,30 @@ public class Day5_calculate {
 
             if (input == 5) break;
 
-            if (input >=1 && input <=4) {
+            if (input >= 1 && input <= 4) {
                 System.out.print("첫번째 숫자 : ");
-                int first_input = sc.nextInt();
+                int a = sc.nextInt();
                 System.out.print("두번째 숫자 : ");
-                int second_input = sc.nextInt();
+                int b = sc.nextInt();
 
                 if (input == 1) {
-
-                    int sum = first_input + second_input;
-                    System.out.println("결과 : " + sum);
-
+                    System.out.println("결과 : " + cal.add(a,b));
                 } else if (input == 2) {
-
-                    int minus = first_input - second_input;
-                    System.out.println("결과 : " + minus);
-
+                    System.out.println("결과 : " + cal.subtract(a,b));
                 } else if (input == 3) {
-
-                    int multiply = first_input * second_input;
-                    System.out.println("결과 : " + multiply);
-
+                    System.out.println("결과 : " + cal.multiply(a,b));
                 } else if (input == 4) {
-                    if (second_input == 0) {
+                    if (b == 0) {
                         System.out.println("0으로 나눌 수 없습니다.");
-                    } else {
-                        double divide = (double) first_input / second_input;
-                        System.out.println("결과 : " + divide);
+                        System.out.print("두번째 숫자 : ");
+                        b = sc.nextInt();
                     }
+
+                    System.out.println("결과 : " + cal.divide(a,b));
                 }
-            }else {
-                    System.out.println("잘못된 선택입니다.");
-                }
+            } else {
+                System.out.println("잘못된 선택입니다.");
+            }
         }
     }
 }
