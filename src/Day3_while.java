@@ -6,13 +6,28 @@ public class Day3_while {
 
         Scanner sc = new Scanner(System.in);
 
+        // Q2 짝수만 더하기
+        int input;
+        int sum = 0;
+
+        while (true) {
+            System.out.print("입력 : ");
+            input = sc.nextInt();
+            if (input != 0 && input % 2 == 0) {
+               sum += input;
+            } else if (input == 0){
+                System.out.println("짝수 합 : " + sum);
+                break;
+            }
+        }
+
         // Q1 0을 입력할 때까지 계속 숫자 입력받기
         //숫자 계속 입력
         //입력한 숫자 모두 더하기
         //0 입력하면 종료
         //최종 합 출력
-        int input= 0;
-        int sum = 0;
+        // int input= 0;
+        // int sum = 0;
 
         while (true) {
             System.out.print("숫자 입력 : ");
