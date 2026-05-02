@@ -11,6 +11,13 @@ public class Day6_List {
         list.add(4);
         list.add(5);
 
+        // Q3 짝수만 출력
+        for (int num : list) {
+            if (num % 2 == 0) {
+                System.out.println(num);
+            }
+        }
+
         // Q2 List에 있는 숫자 합 구하기
         int result = 0;
         for (int num : list) {
