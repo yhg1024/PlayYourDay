@@ -8,7 +8,9 @@ public class Day4_menu {
             System.out.println("===== 메뉴 =====");
             System.out.println("1. 숫자 합계");
             System.out.println("2. 최댓값 찾기");
-            System.out.println("3. 종료");
+            System.out.println("3. 짝수 합 구하기");
+            System.out.println("4. 홀수 개수 세기");
+            System.out.println("5. 종료");
             System.out.print("선택: ");
             int input = sc.nextInt();
 
@@ -48,6 +50,36 @@ public class Day4_menu {
                     }
                 }
             } else if (input == 3) {
+                System.out.print("입력 : ");
+                input = sc.nextInt();
+                int sum = 0;
+
+                while (true) {
+                    System.out.print("입력 : ");
+                    input = sc.nextInt();
+                    if (input == 0){
+                        System.out.println("짝수의 합은 : " + sum);
+                        break;
+                    } else if (input % 2 == 0) {
+                        sum += input;
+                    }
+                }
+            } else if (input == 4) {
+                int count = 0;
+                while (true) {
+                    System.out.print("입력 : ");
+                    input = sc.nextInt();
+
+                    if (input == 0) {
+                        System.out.println("홀수 개수 : " + count);
+                        break;
+                    }
+
+                    if (input % 2 == 1) {
+                        count++;
+                    }
+                }
+            } else if (input == 5) {
                 break;
             }
         }
