@@ -5,9 +5,22 @@ public class Day3_while {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+        int input = 0;
+
+        // Q3 가장 큰 수 찾기
+        int max = 0;
+        while (true) {
+            System.out.print("입력 : ");
+            input = sc.nextInt();
+            if (input != 0 && input > max) {
+                max = input;
+            } else if (input == 0){
+                System.out.println("최댓값 : " + max);
+                break;
+            }
+        }
 
         // Q2 짝수만 더하기
-        int input;
         int sum = 0;
 
         while (true) {
@@ -26,8 +39,7 @@ public class Day3_while {
         //입력한 숫자 모두 더하기
         //0 입력하면 종료
         //최종 합 출력
-        // int input= 0;
-        // int sum = 0;
+        sum = 0;
 
         while (true) {
             System.out.print("숫자 입력 : ");
