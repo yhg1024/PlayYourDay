@@ -8,16 +8,24 @@ public class Day3_while {
         int input = 0;
 
         // Q3 가장 큰 수 찾기
-        int max = 0;
+        System.out.print("입력 : ");
+        input = sc.nextInt();
+        // 첫 입력이 0이면 바로 종료
+        if (input == 0) {
+            System.out.println("입력된 값이 없습니다.");
+        } else {
+        int max = input;
         while (true) {
             System.out.print("입력 : ");
             input = sc.nextInt();
-            if (input != 0 && input > max) {
+            if (input > max) {
                 max = input;
-            } else if (input == 0){
+            }
+            if (input == 0){
                 System.out.println("최댓값 : " + max);
                 break;
             }
+        }
         }
 
         // Q2 짝수만 더하기
