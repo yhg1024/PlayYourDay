@@ -11,6 +11,15 @@ public class Day6_List {
         list.add(4);
         list.add(5);
 
+        // Q4 가장 큰 값 찾기
+        int max = list.get(0); // 첫 값을 기준으로 시작
+        for (int num : list) {
+            if (num > max) {
+                max = num;
+            }
+        }
+        System.out.println("가장 큰 값 : " + max);
+
         // Q3 짝수만 출력
         for (int num : list) {
             if (num % 2 == 0) {
