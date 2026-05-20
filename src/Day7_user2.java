@@ -80,9 +80,10 @@ public class Day7_user2 {
                 System.out.println("삭제할 아이디를 입력하세요");
                 String id = sc.next();
 
-                for (User user : users) {
-                    if (user.id.equals(id)) {
-                        users.remove(user);
+                for (int i = 0; i < users.size(); i++) {
+                    if (users.get(i).id.equals(id)) {
+                        users.remove(i);
+                        break;
                     }
                 }
             } else if (input == 5) {
