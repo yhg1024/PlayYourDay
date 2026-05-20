@@ -23,6 +23,8 @@ public class AttractionRecord {
         System.out.print("선택: ");
         int choice = sc.nextInt();
 
+        //selected 변수 안에
+        //Attraction 객체 저장
         Attraction selected = attractions.get(choice -1);
 
         RideRecord record = new RideRecord();
