@@ -1,4 +1,5 @@
 public class RideRecord {
+    RideRecord id;
     String attractionName;
     String date;
 
