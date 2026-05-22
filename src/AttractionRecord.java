@@ -30,56 +30,68 @@ public class AttractionRecord {
 
             if (input >= 1 && input <= 3)   {
                 if (input == 1) {
-                    //기록 추가
-                    for(Attraction attraction : attractions) {
-                        System.out.println(attraction.id + ". " + attraction.name);
-                    }
-
-                    System.out.print("선택: ");
-                    int choice = sc.nextInt();
-                    //selected 변수 안에
-                    //Attraction 객체 저장
-                    Attraction selected = attractions.get(choice - 1);
-
-                    System.out.println("방문하신 날짜를 입력하세요.");
-                    String date = sc.next();
-
-                    System.out.println("대기시간을 입력하세요.");
-                    int waitTime = sc.nextInt();
-                    RideRecord record = new RideRecord();
-                    record.attractionName = selected.name;
-                    record.date = date;
-                    record.waitTime = waitTime;
-
-                    records.add(record);
+                    addRecord(sc, attractions, records);
                 } else if (input == 2) {
-                    // 기록 보기
-                    for (RideRecord record : records){
-                        System.out.println(record.attractionName + " / " + record.waitTime + "분 / " + record.date);
-                    }
+                    printRecord(records);
                 } else if (input == 3) {
-                    // 기록 삭제
-                    if (records.isEmpty()) {
-                        System.out.println("기록이 없습니다.");
-                    } else {
-                        for (int i = 0; i < records.size(); i++) {
-                            RideRecord record = records.get(i);
-
-                            System.out.println(
-                                    (i + 1) + ". " +
-                                            record.attractionName + " / " +
-                                            record.waitTime + "분 / " +
-                                            record.date);
-                        }
-                        System.out.println("삭제할 기록을 고르세요.");
-                        int choice = sc.nextInt();
-                        if (choice >= 1 && choice <= records.size()) {
-                            records.remove(choice - 1);
-                        }
-
-                    }
+                    deleteRecord(sc, records);
                 }
             }
+        }
+    }
+
+    private static void addRecord(Scanner sc, List<Attraction> attractions, List<RideRecord> records) {
+        //기록 추가
+        for(Attraction attraction : attractions) {
+            System.out.println(attraction.id + ". " + attraction.name);
+        }
+
+        System.out.print("선택: ");
+        int choice = sc.nextInt();
+        //selected 변수 안에
+        //Attraction 객체 저장
+        Attraction selected = attractions.get(choice - 1);
+
+        System.out.println("방문하신 날짜를 입력하세요.");
+        String date = sc.next();
+
+        System.out.println("대기시간을 입력하세요.");
+        int waitTime = sc.nextInt();
+        RideRecord record = new RideRecord();
+        record.attractionName = selected.name;
+        record.date = date;
+        record.waitTime = waitTime;
+
+        records.add(record);
+    }
+
+    public static void printRecord(List<RideRecord> records){
+        // 기록 보기
+        for (RideRecord record : records){
+            System.out.println(record.attractionName + " / " + record.waitTime + "분 / " + record.date);
+        }
+    }
+
+    public static void deleteRecord(Scanner sc, List<RideRecord> records) {
+        // 기록 삭제
+        if (records.isEmpty()) {
+            System.out.println("기록이 없습니다.");
+        } else {
+            for (int i = 0; i < records.size(); i++) {
+                RideRecord record = records.get(i);
+
+                System.out.println(
+                        (i + 1) + ". " +
+                                record.attractionName + " / " +
+                                record.waitTime + "분 / " +
+                                record.date);
+            }
+            System.out.println("삭제할 기록을 고르세요.");
+            int choice = sc.nextInt();
+            if (choice >= 1 && choice <= records.size()) {
+                records.remove(choice - 1);
+            }
+
         }
     }
 }
