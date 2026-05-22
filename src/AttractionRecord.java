@@ -32,7 +32,9 @@ public class AttractionRecord {
                 if (input == 1) {
                     addRecord(sc, attractions, records);
                 } else if (input == 2) {
-                    printRecord(records);
+                    for (RideRecord record : records) {
+                        printOneRecord(record);
+                    }
                 } else if (input == 3) {
                     deleteRecord(sc, records);
                 }
@@ -57,19 +59,17 @@ public class AttractionRecord {
 
         System.out.println("대기시간을 입력하세요.");
         int waitTime = sc.nextInt();
-        RideRecord record = new RideRecord();
-        record.attractionName = selected.name;
-        record.date = date;
-        record.waitTime = waitTime;
+        //RideRecord record = new RideRecord();
+        //record.attractionName = selected.name;
+        //record.date = date;
+        //record.waitTime = waitTime;
 
-        records.add(record);
+        records.add(new RideRecord(selected.name, date, waitTime));
     }
 
-    public static void printRecord(List<RideRecord> records){
+    public static void printOneRecord(RideRecord record){
         // 기록 보기
-        for (RideRecord record : records){
-            System.out.println(record.attractionName + " / " + record.waitTime + "분 / " + record.date);
-        }
+        System.out.println(record.attractionName + " / " + record.waitTime + "분 / " + record.date);
     }
 
     public static void deleteRecord(Scanner sc, List<RideRecord> records) {
@@ -80,11 +80,9 @@ public class AttractionRecord {
             for (int i = 0; i < records.size(); i++) {
                 RideRecord record = records.get(i);
 
-                System.out.println(
-                        (i + 1) + ". " +
-                                record.attractionName + " / " +
-                                record.waitTime + "분 / " +
-                                record.date);
+                System.out.print(
+                        (i + 1) + ". ");
+                printOneRecord(record);
             }
             System.out.println("삭제할 기록을 고르세요.");
             int choice = sc.nextInt();
